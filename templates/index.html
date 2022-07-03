@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block title %}
+<title>Home </title>
+{% endblock title %}
+{% block body %}
+<h1 class='text-center'>Home Page </h1><br>
+<div class="row mb-2">
+{% for blog in data %}
+  <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h5 class="mb-0">Featured post</h5>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto">{{blog.content}}</p>
+          <a href="/detail/{{blog.blog_id}}" class="stretched-link btn btn-primary">Continue reading</a>
+          
+        </div>
+        </div>
+      </div>
+{% endfor %}
+</div>
+{% endblock body %}
